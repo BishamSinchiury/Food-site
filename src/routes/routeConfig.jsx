@@ -48,6 +48,7 @@ export const ACCESS = Object.freeze({
 const Home      = lazy(() => import("@/pages/Home"));
 const Login     = lazy(() => import("@/pages/Login"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
+const Landing   = lazy(() => import("@/pages/Landing/Landing"));
 
 // ---------------------------------------------------------------------------
 // Route definitions
@@ -57,7 +58,7 @@ const Dashboard = lazy(() => import("@/pages/Dashboard"));
 const routes = [
   {
     path:      "/",
-    component: Home,
+    component: Landing,
     access:    ACCESS.PUBLIC,
     providers: [],
   },
