@@ -10,10 +10,7 @@ export default function Landing() {
   return (
     <>
       <Header cartCount={cart.length} />
-      <main>
-        <Hero image={heroImage} />
-        <MostLoved items={menuItems} onAdd={(item) => setCart((c) => [...c, item])} />
-      </main>
+      
     </>
   );
 }

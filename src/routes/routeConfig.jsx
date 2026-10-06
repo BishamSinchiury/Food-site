@@ -37,18 +37,18 @@ import { lazy } from "react";
 // Access levels — frozen so they cannot be mutated at runtime
 // ---------------------------------------------------------------------------
 export const ACCESS = Object.freeze({
-  PUBLIC:  "public",
+  PUBLIC: "public",
   PRIVATE: "private",
-  GUEST:   "guest",
+  GUEST: "guest",
 });
 
 // ---------------------------------------------------------------------------
 // Page imports — all lazy so each page is code-split into its own chunk
 // ---------------------------------------------------------------------------
-const Home      = lazy(() => import("@/pages/Home"));
-const Login     = lazy(() => import("@/pages/Login"));
+const Home = lazy(() => import("@/pages/Home"));
+const Login = lazy(() => import("@/pages/Login"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
-const Landing   = lazy(() => import("@/pages/Landing/Landing"));
+const Landing = lazy(() => import("@/pages/Landing/Landing"));
 
 // ---------------------------------------------------------------------------
 // Route definitions
@@ -57,21 +57,27 @@ const Landing   = lazy(() => import("@/pages/Landing/Landing"));
 /** @type {RouteEntry[]} */
 const routes = [
   {
-    path:      "/",
+    path: "/",
+    component: Home,
+    access: ACCESS.PUBLIC,
+    providers: [],
+  },
+  {
+    path: "/landing",
     component: Landing,
-    access:    ACCESS.PUBLIC,
+    access: ACCESS.PUBLIC,
     providers: [],
   },
   {
-    path:      "/login",
+    path: "/login",
     component: Login,
-    access:    ACCESS.GUEST,
+    access: ACCESS.GUEST,
     providers: [],
   },
   {
-    path:      "/dashboard",
+    path: "/dashboard",
     component: Dashboard,
-    access:    ACCESS.PRIVATE,
+    access: ACCESS.PRIVATE,
     providers: [],
   },
 ];
@@ -119,9 +125,9 @@ validateRoutes(routes);
 // ---------------------------------------------------------------------------
 // Exports grouped by access level — consumed by AppRoutes
 // ---------------------------------------------------------------------------
-export const publicRoutes  = routes.filter((r) => r.access === ACCESS.PUBLIC);
+export const publicRoutes = routes.filter((r) => r.access === ACCESS.PUBLIC);
 export const privateRoutes = routes.filter((r) => r.access === ACCESS.PRIVATE);
-export const guestRoutes   = routes.filter((r) => r.access === ACCESS.GUEST);
+export const guestRoutes = routes.filter((r) => r.access === ACCESS.GUEST);
 
 /**
  * @typedef {Object} RouteEntry
