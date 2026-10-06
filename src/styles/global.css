@@ -1,0 +1,89 @@
+﻿/* ==========================================================================
+   GLOBAL STYLES
+   Imports tokens, applies resets and base typography.
+   Keep rules here minimal — component-specific styles belong in *.module.css.
+   ========================================================================== */
+@import "./tokens.css";
+
+/* --- Box-sizing reset ---------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base ---------------------------------------------------------------- */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  color: var(--text);
+  background-color: var(--background);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+/* --- Headings ------------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--text-5xl); font-weight: var(--font-extrabold); }
+h2 { font-size: var(--text-4xl); font-weight: var(--font-bold);      }
+h3 { font-size: var(--text-2xl); font-weight: var(--font-semibold);  }
+h4 { font-size: var(--text-xl);  font-weight: var(--font-semibold);  }
+p  { font-size: var(--text-base); font-weight: var(--font-regular);  }
+small { font-size: var(--text-sm); }
+
+/* Small screens: scale headings down */
+@media (max-width: 640px) {
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl);  }
+  h4 { font-size: var(--text-lg);  }
+}
+
+/* --- Links --------------------------------------------------------------- */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+a:hover { opacity: 0.8; }
+
+/* --- Visible focus rings (accessibility) --------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Images -------------------------------------------------------------- */
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* --- Buttons reset ------------------------------------------------------- */
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --- Root layout fill ---------------------------------------------------- */
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,207 @@
+﻿/* Dashboard — private page */
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+}
+
+/* ---- Header -------------------------------------------------------------- */
+.header {
+  height: var(--header-height);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--primary);
+}
+
+.planBadge {
+  padding: var(--space-1) var(--space-3);
+  background: color-mix(in srgb, var(--accent) 12%, var(--background));
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-body);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
+.userName {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+.logoutBtn {
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  font-family: var(--font-body);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.logoutBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ---- Main content -------------------------------------------------------- */
+.main {
+  flex: 1;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6);
+  width: 100%;
+}
+
+.greeting {
+  margin-bottom: var(--space-10);
+}
+
+.greetingTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--text);
+}
+
+.greetingTitle span {
+  color: var(--primary);
+}
+
+.greetingSub {
+  font-size: var(--text-base);
+  color: var(--muted);
+  margin-top: var(--space-2);
+}
+
+/* ---- Stat cards ---------------------------------------------------------- */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.statCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.statCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.statIcon {
+  font-size: var(--text-3xl);
+}
+
+.statLabel {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  color: var(--text);
+  line-height: 1;
+}
+
+.statChange {
+  font-size: var(--text-xs);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: var(--font-medium);
+}
+
+/* ---- Loading / error states ---------------------------------------------- */
+.statusMsg {
+  font-size: var(--text-base);
+  color: var(--muted);
+  font-family: var(--font-body);
+  padding: var(--space-4);
+}
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .userName {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .headerInner {
+    padding: 0 var(--space-4);
+  }
+  .main {
+    padding: var(--space-6) var(--space-4);
+  }
+}
