@@ -10,7 +10,10 @@ export default function Landing() {
   return (
     <>
       <Header cartCount={cart.length} />
-      
+      <main>
+        <Hero/>
+    
+      </main>
     </>
   );
 }
