@@ -1,0 +1,115 @@
+/* Outer full-width bar */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg, #fff7ed);
+}
+
+/* Inner div that does the alignment */
+.container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* logo | links | icons */
+  align-items: center;
+  max-width: 1280px;
+  height: 68px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+/* Logo (left) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: start;
+  text-decoration: none;
+}
+.logoIcon {
+  flex-shrink: 0;
+  font-size: 2.6rem;
+  color: var(--primary);
+  transform: rotate(-20deg);
+}
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+.brand {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary);
+}
+.tagline {
+  margin-top: 4px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+/* Links (center) */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 51px;
+  justify-self: center;
+}
+.link {
+  position: relative;
+  padding: 6px 0;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--muted);
+}
+.link:hover,
+.active {
+  color: var(--primary);
+}
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 9999px;
+  background: var(--primary);
+}
+
+/* Icons (right) */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-self: end;
+}
+.iconBtn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 1.4rem;
+  color: var(--text);
+  cursor: pointer;
+}
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 600;
+}

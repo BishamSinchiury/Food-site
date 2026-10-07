@@ -74,6 +74,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+<<<<<<< HEAD
 h1,
 h2,
 h3,
@@ -122,3 +123,22 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
+=======
+h1, h2, h3, h4 { font-family: var(--font-heading); margin: 0; color: var(--text); }
+h1 { font-size: var(--text-5xl); font-weight: var(--font-bold); }
+h2 { font-size: var(--text-4xl); font-weight: var(--font-bold); }
+h3 { font-size: var(--text-2xl); font-weight: var(--font-semibold); }
+h4 { font-size: var(--text-xl); font-weight: var(--font-semibold); }
+p { font-size: var(--text-base); font-weight: var(--font-regular); margin: 0; }
+small { font-size: var(--text-sm); }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap");
+*, 
+*::before, 
+*::after { box-sizing: border-box; }
+body { margin: 0; background: var(--background); font-family: var(--font-body); }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+>>>>>>> ffa3365e8008ddcd4574d44b0145d405a50b489e
