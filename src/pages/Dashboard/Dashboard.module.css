@@ -28,6 +28,29 @@
   justify-content: space-between;
   gap: var(--space-4);
 }
+.container {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: center;
+}
+
+.pizzaBtn {
+  padding: var(--space-3) var(--space-6);
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.pizzaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
 
 .brand {
   display: flex;

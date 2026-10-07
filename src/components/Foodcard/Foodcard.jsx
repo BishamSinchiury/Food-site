@@ -1,6 +1,5 @@
 import { LuHeart } from "react-icons/lu";
 import styles from "./FoodCard.module.css";
-
 export default function FoodCard({ item, onAdd }) {
   return (
     <article className={styles.card}>
@@ -10,7 +9,6 @@ export default function FoodCard({ item, onAdd }) {
           <LuHeart />
         </button>
       </div>
-
       <div className={styles.body}>
         <h3 className={styles.name}>{item.name}</h3>
         <p className={styles.desc}>{item.description}</p>

@@ -1,10 +1,4 @@
-﻿/**
- * Dashboard  —  src/pages/Dashboard/Dashboard.jsx
- * =================================================
- * Private page — only reachable when authenticated (guarded by PrivateRoute).
- * Demonstrates consumption of all three contexts: auth, org, user.
- */
-import { useNavigate } from "react-router-dom";
+﻿import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/auth/useAuth";
 import { useOrg } from "@/contexts/org/useOrg";
 import { useUser } from "@/contexts/user/useUser";
@@ -97,6 +91,14 @@ function Dashboard() {
                 <p className={styles.statChange}>{s.change}</p>
               </article>
             ))}
+          </div>
+          <div className={styles.container}>
+          <button
+              className={styles.pizzaBtn}
+              onClick={() => navigate("/pizza")}
+            >
+              🍕 Pizza Customize
+            </button>
           </div>
         </section>
       </main>
