@@ -79,3 +79,11 @@ p { font-size: var(--text-base); font-weight: var(--font-regular); margin: 0; }
 small { font-size: var(--text-sm); }
 a { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap");
+*, 
+*::before, 
+*::after { box-sizing: border-box; }
+body { margin: 0; background: var(--background); font-family: var(--font-body); }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
